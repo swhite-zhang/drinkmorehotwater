@@ -1,0 +1,6 @@
+<view class="container">
+    <view class="person">
+        <view id="important">{{name}}</view>
+        <view>{{num}}</view>
+    </view>
+</view>

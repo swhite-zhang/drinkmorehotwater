@@ -1,0 +1,10 @@
+<!-- logs.wxml -->
+<view class="container login">
+ <view > 名字
+  <input  type="text" placeholder="请输入你的名字" auto-focus="{{true}}" bindinput="inputName"/>
+  </view >
+  <view >学号
+    <input type="number" placeholder="请输入你的学号" auto-focus="{{true}}" bindinput="inputNum"/>
+  </view>
+  <button plain="true"  type="primary" bindtap="next">登录</button>
+</view>

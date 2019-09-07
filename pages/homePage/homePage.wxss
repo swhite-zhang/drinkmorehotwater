@@ -1,0 +1,12 @@
+.person{
+
+    border-bottom-style: inset;
+    padding: 100px;
+    height: 100px;
+    width: 100%;
+    background-color: darkseagreen;
+    text-align: center;
+}
+#important{
+    font-size: 32px;
+}
