@@ -1,6 +1,13 @@
 <view class="container">
     <view class="person">
-        <view id="important">{{name}}</view>
-        <view>{{num}}</view>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" />
+        <view style="font-size:20px;padding-top:16px">{{name}}</view>
+        <view style="font-size:16px">{{num}}</view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">标题文字</view>
+        <view class="weui-cell__ft">说明文字</view>
     </view>
 </view>

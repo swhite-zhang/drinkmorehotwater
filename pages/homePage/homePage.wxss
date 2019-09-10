@@ -1,12 +1,20 @@
 .person{
-
     border-bottom-style: inset;
-    padding: 100px;
-    height: 100px;
+    padding: 30px;
+    height: 120px;
     width: 100%;
     background-color: darkseagreen;
     text-align: center;
+    font-family: STSong 
 }
-#important{
-    font-size: 32px;
+
+.userinfo-avatar {
+    width: 110rpx;
+    height: 110rpx;
+    border-radius: 50%;
+}
+
+.readRecord{
+    line-height: 40px;
+    text-align: center;
 }
