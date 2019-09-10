@@ -1,2 +1,2 @@
 # drinkmorehotwater
-一个测试微信小程序
+一个微信小程序，使用了weui的库
