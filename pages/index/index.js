@@ -8,7 +8,8 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse("button.open-type.getUserInfo"),
     getNum: false,
-    getName: false
+    getName: false,
+    loading: false
   },
   //事件处理函数
   onLoad: function() {
@@ -70,6 +71,7 @@ Page({
     this.onLoad();
   },
   next: function() {
+    this.setData({ loading: true });
     wx.navigateTo({
       url:
         "../homePage/homePage?name=" +

@@ -1,13 +1,76 @@
-<view class="container">
-    <view class="person">
-        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" />
-        <view style="font-size:20px;padding-top:16px">{{name}}</view>
-        <view style="font-size:16px">{{num}}</view>
+<block wx:if="{{home}}">
+    <view class="container">
+        <view class="person">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" />
+            <view style="font-size:20px;padding-top:16px">{{name}}</view>
+            <view style="font-size:16px">{{num}}</view>
+        </view>
     </view>
-</view>
-<view class="weui-cells weui-cells_after-title">
-    <view class="weui-cell">
-        <view class="weui-cell__bd">标题文字</view>
-        <view class="weui-cell__ft">说明文字</view>
+    <view class="readRecord">
+        <view class="weui-cells weui-cells_after-title">
+            <view wx:for="{{book}}" class="weui-cell">
+                <view class="weui-cell__bd">{{book[index].name}}</view>
+                <view class="weui-cell__ft">{{book[index].status}}</view>
+            </view>
+        </view>
     </view>
-</view>
+    <view class="tabbar">
+        <view class="weui-tabbar">
+            <view class="weui-tabbar__item">
+                <view class="weui-tabbar__label" style="font-size: 16px;color:{{color.f}}" bindtap="changeInterF">
+                    个人主页
+                </view>
+            </view>
+            <view class="weui-tabbar__item">
+                <view class="weui-tabbar__label" style="font-size: 16px;color:{{color.s}}" bindtap="changeInterS">
+                    搜索书目
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <view class="page__bd">
+        <view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">搜索</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">
+                取消
+            </view>
+        </view>
+        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
+            <view wx:for="{{searchRecord}}">
+                <navigator url="" class="weui-cell" hover-class="weui-cell_active">
+                    <view class="weui-cell__bd">
+                        <view>{{searchRecord[index]}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="tabbar">
+        <view class="weui-tabbar">
+            <view class="weui-tabbar__item">
+                <view class="weui-tabbar__label" style="font-size: 16px;color:{{color.f}}" bindtap="changeInterF">
+                    个人主页
+                </view>
+            </view>
+            <view class="weui-tabbar__item">
+                <view class="weui-tabbar__label" style="font-size: 16px;color:{{color.s}}" bindtap="changeInterS">
+                    搜索书目
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

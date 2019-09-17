@@ -19,6 +19,6 @@
     <button size="mini" plain="true" type="primary" bindtap="openConfirm">登录</button>
   </block>
   <block wx:else>
-    <button size="mini" plain="true" type="primary" bindtap="next">登录</button>
+    <button size="mini" plain="true" type="primary" bindtap="next" loading="{{loading}}">登录</button>
   </block>
 </view>
